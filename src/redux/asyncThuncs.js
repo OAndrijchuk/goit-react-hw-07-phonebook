@@ -12,7 +12,7 @@ export const fetchContactsThunk = createAsyncThunk(
       const respons = await contactsInstans.get('/contacts');
       return respons.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.massage);
+      thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -23,7 +23,7 @@ export const addContactThunk = createAsyncThunk(
       const respons = await contactsInstans.post('/contacts', contact);
       return respons.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.massage);
+      thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -34,7 +34,7 @@ export const deleteContactThunk = createAsyncThunk(
       const respons = await contactsInstans.delete(`/contacts/${id}`);
       return respons.data.id;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.massage);
+      thunkAPI.rejectWithValue(error.message);
     }
   }
 );
